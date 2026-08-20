@@ -111,6 +111,10 @@ function detectCategory(item) {
     ${item?.content || ""}
   `.toLowerCase();
 
+  // ========================================
+  // AI
+  // ========================================
+
   if (
     text.includes("openai") ||
     text.includes("chatgpt") ||
@@ -119,10 +123,16 @@ function detectCategory(item) {
     text.includes("gemini") ||
     text.includes("llm") ||
     text.includes("artificial intelligence") ||
-    text.includes("machine learning")
+    text.includes("machine learning") ||
+    text.includes("deep learning") ||
+    text.includes("generative ai")
   ) {
     return "AI";
   }
+
+  // ========================================
+  // Cybersecurity
+  // ========================================
 
   if (
     text.includes("cybersecurity") ||
@@ -130,33 +140,35 @@ function detectCategory(item) {
     text.includes("ransomware") ||
     text.includes("malware") ||
     text.includes("data breach") ||
-    text.includes("vulnerability")
+    text.includes("vulnerability") ||
+    text.includes("phishing") ||
+    text.includes("zero-day") ||
+    text.includes("zero day")
   ) {
     return "Cybersecurity";
   }
 
+  // ========================================
+  // Cloud
+  // ========================================
+
   if (
     text.includes("aws") ||
+    text.includes("amazon web services") ||
     text.includes("azure") ||
     text.includes("google cloud") ||
     text.includes("docker") ||
     text.includes("kubernetes") ||
-    text.includes("cloud computing")
+    text.includes("cloud computing") ||
+    text.includes("cloud infrastructure") ||
+    text.includes("devops")
   ) {
     return "Cloud";
   }
 
-  if (
-    text.includes("react") ||
-    text.includes("javascript") ||
-    text.includes("typescript") ||
-    text.includes("next.js") ||
-    text.includes("frontend") ||
-    text.includes("css") ||
-    text.includes("html")
-  ) {
-    return "Web Development";
-  }
+  // ========================================
+  // Mobile
+  // ========================================
 
   if (
     text.includes("android") ||
@@ -164,34 +176,45 @@ function detectCategory(item) {
     text.includes("ios") ||
     text.includes("swift") ||
     text.includes("flutter") ||
-    text.includes("react native")
+    text.includes("react native") ||
+    text.includes("mobile app") ||
+    text.includes("mobile development")
   ) {
     return "Mobile";
   }
 
+  // ========================================
+  // Development
+  // ========================================
+
   if (
-    text.includes("github") ||
-    text.includes("open source") ||
+    text.includes("react") ||
+    text.includes("javascript") ||
+    text.includes("typescript") ||
+    text.includes("next.js") ||
+    text.includes("node.js") ||
+    text.includes("nodejs") ||
+    text.includes("frontend") ||
+    text.includes("backend") ||
+    text.includes("full stack") ||
+    text.includes("web development") ||
+    text.includes("software development") ||
     text.includes("programming") ||
     text.includes("developer") ||
     text.includes("coding") ||
+    text.includes("github") ||
     text.includes("api") ||
-    text.includes("sdk")
+    text.includes("sdk") ||
+    text.includes("html") ||
+    text.includes("css") ||
+    text.includes("python")
   ) {
-    return "Programming";
+    return "Development";
   }
 
-  if (
-    text.includes("nvidia") ||
-    text.includes("amd") ||
-    text.includes("gpu") ||
-    text.includes("cpu") ||
-    text.includes("semiconductor") ||
-    text.includes("chip") ||
-    text.includes("robotics")
-  ) {
-    return "Hardware";
-  }
+  // ========================================
+  // Default
+  // ========================================
 
   return "Technology";
 }

@@ -1,9 +1,12 @@
-function News() {
+import ComingSoon from "../components/common/ComingSoon";
+
+function Jobs() {
   return (
-    <div className="min-h-screen bg-zinc-950 text-white flex items-center justify-center">
-      <h1 className="text-5xl font-bold">News Page</h1>
-    </div>
+    <ComingSoon
+      title="Jobs Are Coming Soon 🚀"
+      description="We're working on bringing curated tech jobs and internship opportunities to TechNews."
+    />
   );
 }
 
-export default News;
+export default Jobs;

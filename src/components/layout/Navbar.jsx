@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Moon, LogIn } from "lucide-react";
+import { LogIn } from "lucide-react";
 
 function Navbar() {
   return (
@@ -25,10 +25,6 @@ function Navbar() {
         {/* Right Side */}
 
         <div className="flex items-center gap-4">
-
-          <button className="rounded-xl border border-zinc-700 bg-zinc-900 p-3 transition hover:border-teal-500 hover:bg-zinc-800">
-            <Moon size={20} />
-          </button>
 
           <Link
             to="/login"

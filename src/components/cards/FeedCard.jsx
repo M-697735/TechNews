@@ -48,20 +48,27 @@ function FeedCard({
       {/* Image */}
 
       <div className="relative h-52 overflow-hidden">
+ {image ? (
+  <img
+    src={image}
+    alt={title}
+    onError={(e) => {
+      e.currentTarget.style.display = "none";
+      e.currentTarget.nextElementSibling.style.display = "flex";
+    }}
+    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+  />
+) : null}
 
-        {image ? (
-          <img
-            src={image}
-            alt={title}
-            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-zinc-900 via-zinc-800 to-teal-950">
-            <span className="text-2xl font-bold text-teal-400">
-              TechNews
-            </span>
-          </div>
-        )}
+<div
+  className={`h-full w-full items-center justify-center bg-gradient-to-br from-zinc-900 via-zinc-800 to-teal-950 ${
+    image ? "hidden" : "flex"
+  }`}
+>
+  <span className="text-2xl font-bold text-teal-400">
+    TechNews
+  </span>
+</div>
 
         <span className="absolute left-4 top-4 rounded-full bg-teal-500 px-3 py-1 text-xs font-semibold text-black">
           {category || "Technology"}

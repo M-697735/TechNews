@@ -6,7 +6,7 @@ import Jobs from "./pages/Jobs";
 import Hackathons from "./pages/Hackathons";
 import Courses from "./pages/Courses";
 import About from "./pages/About";
-
+import Saved from "./pages/Saved";
 import Login from "./pages/Login";
 import Onboarding from "./pages/Onboarding";
 
@@ -56,6 +56,12 @@ function App() {
       <Route
         path="/dashboard"
         element={<Dashboard />}
+      />
+
+      {/* Saved*/}
+      <Route
+         path="/saved"
+         element={<Saved />}
       />
 
       {/* Profile */}

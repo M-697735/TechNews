@@ -1,9 +1,12 @@
-function News() {
+import ComingSoon from "../components/common/ComingSoon";
+
+function Hackathons() {
   return (
-    <div className="min-h-screen bg-zinc-950 text-white flex items-center justify-center">
-      <h1 className="text-5xl font-bold">News Page</h1>
-    </div>
+    <ComingSoon
+      title="Hackathons Are Coming Soon 🏆"
+      description="We're working on bringing the latest hackathons and competitive opportunities for developers and students."
+    />
   );
 }
 
-export default News;
+export default Hackathons;
