@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   Bookmark,
   Clock,
@@ -7,6 +9,7 @@ import {
 import { motion } from "framer-motion";
 
 function Card({ data }) {
+  const [imageError, setImageError] = useState(false);
   return (
     <motion.div
       whileHover={{
@@ -21,16 +24,22 @@ function Card({ data }) {
 
       <div className="h-36 w-36 flex-shrink-0 overflow-hidden">
 
-        <img
-          src={
-            data.image ||
-            "https://placehold.co/300x300?text=Tech"
-          }
-          alt={data.title}
-          className="h-full w-full object-cover"
-        />
+  {!data.image || imageError ? (
+    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-zinc-900 via-zinc-800 to-teal-950">
+      <span className="text-lg font-bold text-teal-400">
+        TechNews
+      </span>
+    </div>
+  ) : (
+    <img
+      src={data.image}
+      alt={data.title}
+      onError={() => setImageError(true)}
+      className="h-full w-full object-cover"
+    />
+  )}
 
-      </div>
+</div>
 
       {/* Content */}
 
